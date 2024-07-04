@@ -21,9 +21,22 @@ window.onload = function () {
     const currentDay = days[now.getUTCDay()];
 
     currentDayElement.textContent = `${currentDay}`;
-    currentTimeElement.textContent = `${utcTime}`;
+    currentTimeElement.textContent = `Time Check: ${utcTime}`;
   }
 
   updateTimeAndDay();
   setInterval(updateTimeAndDay, 1000);
 };
+
+function toggleMoreGoals() {
+  const moreGoals = document.getElementById("moreGoals");
+  const seeMoreBtn = document.getElementById("seeMoreBtn");
+  if (moreGoals.style.display === "none") {
+    moreGoals.style.display = "block";
+    seeMoreBtn.textContent = "See Less";
+  } else {
+    moreGoals.style.display = "none";
+    seeMoreBtn.textContent =
+      "UHH... We are not done yet. Just a little bit more 😁. Told you I have great plans🚀. See more";
+  }
+}
